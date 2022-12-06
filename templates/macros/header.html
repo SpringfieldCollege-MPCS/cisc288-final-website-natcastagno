@@ -1,69 +1,35 @@
 {% macro header() %}
-<header class="bg-slate-600">
-  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-    <div
-      class="flex w-full items-center justify-between border-b border-indigo-500 py-6 lg:border-none"
-    >
-      <div class="flex items-center">
-        <a href="/">
-          <span class="sr-only">CISC288</span>
-          <img
-            class="h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=white"
-            alt=""
-          />
-        </a>
-        <div class="ml-10 hidden space-x-8 lg:block">
-          <a
-            href="/blog"
-            class="text-base font-medium text-white hover:text-indigo-50"
-            >Blog</a
-          >
+<header>
+  <nav>
+    <div class="text-center py-2 bg-[#E8E0D5]">
+        <h1>CLICK HERE FOR NEWS AND UPCOMING EVENTS</h1>
+      </div>
+      
+      
+      <div class ="flex flex-row justify-between py-10 px-8">
 
-          <a
-            href="/testimonial"
-            class="text-base font-medium text-white hover:text-indigo-50"
-            >Testimonials</a
-          >
-
-          <a
-            href="/art"
-            class="text-base font-medium text-white hover:text-indigo-50"
-            >Art</a
-          >
-
-          <a
-            href="#"
-            class="text-base font-medium text-white hover:text-indigo-50"
-            >Articles</a
-          >
-
-
+        <div class="flex justify-left items-center bg-white-300  ">
+          <i class="fas fa-bars fa-2x visible md:invisible mr-10 md:mr-0 text-black cursor-pointer"></i>
+          <ul class="hidden md:flex overflow-x-hidden mr-10 ">
+            <li>
+              {% for menu in config.extra.menu_items %}
+                {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
+                {% set normal_class = "text-black hover:text-black hover:underline underline-offset-4 mr-4 pr-4" %}
+                {% set active_class = "text-black font-semibold underline decoration-white underline-offset-4 mr-4 pr-4" %}
+                <a {% if current_url and current_url is starting_with(link_url) %}
+                  class="{{active_class}}"
+                  {% else %}
+                   class="{{ normal_class }}"
+                  {% endif %} href="{{ link_url }}">{{ menu.name | upper }}</a>
+              {% endfor %}
+            </li>
+          </ul>
         </div>
+
+        <div class="justify-self-end w-16 h-16 border rounded-full bg-[#D9D9D9]"></div>
+
       </div>
-      <div class="ml-10 space-x-4">
-        <!-- <a
-          href="#"
-          class="inline-block rounded-md border border-transparent bg-slate-500 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75"
-          >Join</a
-        > -->
-        <a
-          href="#"
-          class="inline-block rounded-md border border-transparent bg-white py-2 px-4 text-base font-medium text-slate-600 hover:bg-indigo-50"
-          >Join</a
-        >
-      </div>
-    </div>
-    <!-- <div class="flex flex-wrap justify-center space-x-6 py-4 lg:hidden">
-        <a href="#" class="text-base font-medium text-white hover:text-indigo-50">Solutions</a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-indigo-50">Pricing</a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-indigo-50">Docs</a>
-  
-        <a href="#" class="text-base font-medium text-white hover:text-indigo-50">Company</a>
-      </div> -->
-  </nav>
+ </nav>
 </header>
 
 {% endmacro %}
