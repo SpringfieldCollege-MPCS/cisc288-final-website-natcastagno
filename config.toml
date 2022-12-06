@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://natcastagno.com"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
@@ -14,3 +14,11 @@ highlight_code = true
 
 [extra]
 # Put all your custom variables here
+
+menu_items = [
+    { name = "Home", url = "$BASE_URL/home"},
+    { name = "Shop", url = "$BASE_URL/shop"},
+    { name = "Artist statement", url = "$BASE_URL/artiststatement" },
+    { name = "Service", url = "$BASE_URL/service" },
+    { name = "Cart", url = "$BASE_URL/cart"},
+]
