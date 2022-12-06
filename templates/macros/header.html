@@ -1,0 +1,36 @@
+
+{% macro header() %}
+<header>
+  <nav>
+    <div class="text-center py-2 bg-[#E8E0D5]">
+        <h1>CLICK HERE FOR NEWS AND UPCOMING EVENTS</h1>
+      </div>
+      
+      
+      <div class ="flex flex-row justify-between py-10 px-8">
+
+        <div class="flex justify-left items-center bg-white-300  ">
+          <i class="fas fa-bars fa-2x visible md:invisible mr-10 md:mr-0 text-black cursor-pointer"></i>
+          <ul class="hidden md:flex overflow-x-hidden mr-10 ">
+            <li>
+              {% for menu in config.extra.menu_items %}
+                {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
+                {% set normal_class = "text-black hover:text-black hover:underline underline-offset-4 mr-4 pr-4" %}
+                {% set active_class = "text-black font-semibold underline decoration-white underline-offset-4 mr-4 pr-4" %}
+                <a {% if current_url and current_url is starting_with(link_url) %}
+                  class="{{active_class}}"
+                  {% else %}
+                   class="{{ normal_class }}"
+                  {% endif %} href="{{ link_url }}">{{ menu.name | upper }}</a>
+              {% endfor %}
+            </li>
+          </ul>
+        </div>
+
+        <div class="justify-self-end w-16 h-16 border rounded-full bg-[#D9D9D9]"></div>
+
+      </div>
+ </nav>
+</header>
+
+% endmacro %
