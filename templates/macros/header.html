@@ -7,7 +7,7 @@
       </div>
       
       
-      <div class ="flex flex-row justify-between py-10 px-8">
+      <div class ="flex flex-row justify-between py-8 px-8">
 
         <div class="flex justify-left items-center bg-white-300  ">
           <i class="fas fa-bars fa-2x visible md:invisible mr-10 md:mr-0 text-black cursor-pointer"></i>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="justify-self-end ">
-          {% set image = resize_image(path='content/Logo.png', width=130, height=130, op="fill") %}
+          {% set image = resize_image(path='content/Logo.png', width=90, height=90, op="fill") %}
         <img src="{{ image.url }}" />
         </div>
 
