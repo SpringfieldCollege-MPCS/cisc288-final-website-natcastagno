@@ -2,7 +2,12 @@
 
     <footer>  
         <div class="grid grid-cols-9 justify-end bg-[#D9D9D9] text-left pt-10 pb-20">
-          <div class="justify-self-center col-span-3 w-24 h-24 border rounded-full bg-white"></div>
+          <div class="justify-self-center col-span-3 ">
+            {% set image = resize_image(path='content/Logo.png', width=198, height=198, op="fill") %}
+        <img src="{{ image.url }}" />
+        </div>
+
+          </div>
           <div class=" p-1 justify-self-end ">
           <a href="#"><p class="font-semibold">Home</p></a>
             <ul class="cursor-pointer">
