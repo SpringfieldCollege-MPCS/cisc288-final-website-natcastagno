@@ -18,8 +18,7 @@ highlight_code = true
 menu_items = [
     { name = "Home", url = "$BASE_URL/"},
     { name = "Shop", url = "$BASE_URL/shop"},
-    { name = "Artist statement", url = "$BASE_URL/artiststatement" },
+    { name = "Artist Statement", url = "$BASE_URL/artiststatement" },
     { name = "Services", url = "$BASE_URL/services" },
-    { name = "Contact", url = "$BASE_URL/contact" },
     { name = "Cart", url = "$BASE_URL/cart"},
 ]
