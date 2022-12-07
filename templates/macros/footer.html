@@ -1,51 +1,61 @@
 {% macro footer() %}
 
-    <footer>  
-        <div class="grid grid-cols-9 justify-end bg-[#D9D9D9] text-left pt-10 pb-20">
-          <div class="justify-self-center col-span-3 ">
-            {% set image = resize_image(path='content/Logo.png', width=198, height=198, op="fill") %}
-        <img src="{{ image.url }}" />
-        </div>
-
-          </div>
-          <div class=" p-1 justify-self-end ">
-          <a href="#"><p class="font-semibold">Home</p></a>
-            <ul class="cursor-pointer">
-            <li><a href="#">Events</a></li>
-            </ul>
-          </div>
+<footer>
+  <div class="grid grid-cols-9 justify-end bg-[#D9D9D9] text-left pt-10 pb-20">
+    <div class="justify-self-center col-span-3 ">
+      {% set image = resize_image(path='content/Logo.png', width=198, height=198, op="fill") %}
+      <img src="{{ image.url }}" />
+    </div>
+    
+    <div class=" p-1 justify-self-end ">
+      <a href="#">
+        <p class="font-semibold">Home</p>
+      </a>
+      <ul class="cursor-pointer">
+        <li><a href="#">Events</a></li>
+      </ul>
+    </div>
   
-          <div class="p-1 justify-self-end">
-            <a href="#"><p class="font-semibold">Shop</p></a>
-            <ul class="cursor-pointer">
-            <li><a href="#">Collection 1</a></li>
-            <li><a href="#">Collection 2</a></li>
-            <li><a href="#">Collection 3</a></li>
-            </ul>
-          </div>
+    <div class="p-1 justify-self-end">
+      <a href="#">
+        <p class="font-semibold">Shop</p>
+      </a>
+      <ul class="cursor-pointer">
+        <li><a href="#">Collection 1</a></li>
+        <li><a href="#">Collection 2</a></li>
+        <li><a href="#">Collection 3</a></li>
+      </ul>
+    </div>
   
-          <div class="p-1 col-span-2 justify-self-center">
-            <a href="#"><p class="font-semibold">Artist Statement</p></a>
-              <ul class="cursor-pointer">
-              <li><a href="#">Collection Inspiration</a></li>
-              </ul>
-          </div>
+    <div class="p-1 col-span-2 justify-self-center">
+      <a href="#">
+        <p class="font-semibold">Artist Statement</p>
+      </a>
+      <ul class="cursor-pointer">
+        <li><a href="#">Collection Inspiration</a></li>
+      </ul>
+    </div>
   
-          <div class="p-1">
-            <a href="#"><p class="font-semibold">Services</p></a>
-            <ul class="cursor-pointer">
-            <li><a href="#">Request</a></li>
-            <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
+    <div class="p-1">
+      <a href="#">
+        <p class="font-semibold">Services</p>
+      </a>
+      <ul class="cursor-pointer">
+        <li><a href="#">Request</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
   
-          <div class="p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-            </svg>
-          </div>
-        </div> 
-    </footer>
+    <div class="p-1">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+      </svg>
+    </div>
+    
+  </div>
+</footer>
 
 
 {% endmacro %}

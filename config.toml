@@ -19,6 +19,7 @@ menu_items = [
     { name = "Home", url = "$BASE_URL/home"},
     { name = "Shop", url = "$BASE_URL/shop"},
     { name = "Artist statement", url = "$BASE_URL/artiststatement" },
-    { name = "Service", url = "$BASE_URL/service" },
+    { name = "Services", url = "$BASE_URL/services" },
+    { name = "Contact", url = "$BASE_URL/contact" },
     { name = "Cart", url = "$BASE_URL/cart"},
 ]
