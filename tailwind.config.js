@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./templates/**/*.html", "./theme/**/*.html",  "./themes/"],
   theme: {
-    extend: {}
+    container: {
+      center : true,
+    },
+    extend: {
+      fontFamily: {
+        'title': ['Sorts Mill Goudy', 'sans-serif']
+      }
+    }
   },
   variants: {},
   plugins: [
