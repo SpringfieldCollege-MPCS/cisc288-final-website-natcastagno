@@ -7,7 +7,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'title': ['Sorts Mill Goudy', 'sans-serif']
+        'title': ['Sorts Mill Goudy', 'sans-serif'],
+        'spectral': ['Spectral SC', 'sans-serif']
       }
     }
   },
