@@ -1,7 +1,7 @@
 {% macro footer() %}
 
 <footer>
-  <div class="grid grid-cols-9 justify-end bg-[#D9D9D9] text-left pt-10 pb-20">
+  <div class="grid grid-cols-9 justify-end bg-[#E0C5C6] text-left pt-10 pb-20 full-width">
     <div class="justify-self-center col-span-3 ">
       {% set image = resize_image(path='content/Logo.png', width=198, height=198, op="fill") %}
       <img src="{{ image.url }}" />
