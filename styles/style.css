@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Spectral+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy&family=Spectral+SC:wght@300;400&display=swap');
+/* Import all our fonts: Inria Sans, Sorts Mill Goudy, Specral SC */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans&family=Sorts+Mill+Goudy&family=Spectral+SC&display=swap');
 
 
 @tailwind base;
