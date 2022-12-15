@@ -22,7 +22,7 @@
                 {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
                 {% set normal_class = "text-black font-title hover:text-black hover:underline underline-offset-4 mr-4 pr-4" %}
                 {% set active_class = "text-black font-title font-semibold underline decoration-black underline-offset-4 mr-4 pr-4" %}
-                <a {% if current_url and current_url is starting_with(link_url) and link_url != config.base_url  %}
+                <a {% if current_url and current_url == link_url %}
                   class="{{active_class}}"
                   {% else %}
                    class="{{ normal_class }}"
