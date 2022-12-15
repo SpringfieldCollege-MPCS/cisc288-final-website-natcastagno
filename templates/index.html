@@ -4,48 +4,48 @@
 
   <div class="container mx-auto w-screen">
     <section id="Collection">
-      <h1 id="Logo" class="flex justify-end text-black text-5xl font-thin pr-28 pb-20 font-title">NAT CASTAGNO</h1>
-      <div class="grid grid-cols-3 grid-rows-1 gap-10 px-10 py-16">
+      <h1 class="flex justify-end text-black text-2xl md:text-3xl lg:text-5xl font-thin pr-28 pb-20 font-title">NAT CASTAGNO</h1>
+      <div class="grid sm:grid-cols-1 tablet:grid-cols-3 md:grid-cols-3 grid-rows-1 gap-10 px-10 py-16">
         <div>
           {% set image = resize_image(path='/home/home1.jpg', width=516, height=320, op="scale") %}
           <img src="{{ image.url }}" />
-          <a href="#"><p class=" text-black text-xl text-center p-2 font-spectral">HARVEST COLLECTION</p></a>
+          <a href="#"><p class=" text-black sm:text-base md:text-xl text-center p-2 font-spectral">HARVEST COLLECTION</p></a>
         </div>
   
         <div>
           {% set image = resize_image(path='/home/home2.jpg', width=516, height=320, op="scale") %}
           <img src="{{ image.url }}" />
-          <a href="#"><p class="text-black text-xl text-center p-2 font-spectral">LONGMEADOW COLLECTION</p></a>
+          <a href="#"><p class="text-black sm:text-base md:text-xl text-center p-2 font-spectral">LONGMEADOW COLLECTION</p></a>
         </div>
   
         <div>
           {% set image = resize_image(path='/home/home3.jpg', width=516, height=320, op="scale") %}
           <img src="{{ image.url }}" />
-          <a href="#"><p class="text-black text-xl text-center p-2 font-spectral">AMHERST COLLECTION</p></a>
+          <a href="#"><p class="text-black sm:text-base md:text-xl text-center p-2 font-spectral">AMHERST COLLECTION</p></a>
         </div>
       </div>
     </section>
   
-    <article id="About" class="grid grid-cols-2 grid-rows-1 gap-16 items-center p-32">
+    <article id="About" class="grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 grid-rows-1 tablet:gap-6 md:gap-16 items-center sm:p-16 md:p-32">
       <div class="justify-self-center">
         {% set image = resize_image(path='/home/home4.jpg', width=582, height=734, op="scale") %}
         <img src="{{ image.url }}" class="h-96 w-80"/>
       </div>
   
       <div class="flex flex-col">
-        <p class="text-3xl py-2 font-spectral">About</p>
+        <p class="text-2xl md:text-3xl lg:text-5xl py-2 font-spectral">About</p>
         <p class="py-2 font-inria">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
         <a href="#" class="cursor-pointer"><p class="py-2 font-inria">LINK TO ARTIST STATEMENT</p></a>
       </div>
     </article>
   
     <section id="Events">
-      <div class="grid grid-rows-2 gap-10 py-12 px-32">
-        <div class="p-6 border-b-2 border-black text-center text-3xl font-spectral">Events</div>
+      <div class="grid grid-rows-2 gap-10 py-6 md:py-12 px:16 md:px-32">
+        <div class="p-6 border-b-2 border-black text-center text-2xl md:text-3xl font-spectral">Events</div>
         <div class="text-center font-inria"><span class="font-spectral italic">New Releases </span> - This is where you'll be able to keep up with new releases and special events! </div>
       </div>
   
-        <div class="grid grid-cols-3 grid-rows-2 gap-14 justify-items-center px-44 pb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-2 gap-14 justify-items-center sm:px-22 md:px-26 lg:px-44 sm:pb-8 lg:pb-16">
           {% set image = resize_image(path='/home/event1.jpeg', width=383, height=480, op="scale") %}
           <img src="{{ image.url }}" class="w-64 h-80"/>
 
@@ -67,11 +67,11 @@
   
         <div class="py-16">
         <div class="text-center pb-2">
-          <span class="font-medium underline underline-offset-8 font-spectral">Paint Parties</span>
+          <span class="font-medium underline text-2xl md:text-3xl underline-offset-8 font-spectral">Paint Parties</span>
         </div>
   
-        <div class=" grid grid-cols-3">
-          <div class="col-start-2 text-center font-inria">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+        <div class=" grid grid-cols-1 md:grid-cols-3">
+          <div class="md:col-start-2 text-center font-inria">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
         </div>
        </div>
     </section>
