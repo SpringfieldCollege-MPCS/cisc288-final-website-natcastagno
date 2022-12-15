@@ -3,7 +3,7 @@
 <div class="">
   <div class="container mx-auto">
     <h1 class="text-2xl md:text-3xl lg:text-5xl font-thin text-right pr-8 font-title">SERVICES</h1>
-    <div class="grid grid-cols-5 text-black py-20 gap-x-12">
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-5 text-black py-20 gap-x-12">
       <div class="col-span-2 flex flex-col">
         <div>
           <h1 class="text-3xl font-spectral text-right pt-6">SERVICE REQUEST</h1>
@@ -45,10 +45,10 @@
   </div>
 
   <div class="relative  full-width mt-12">
-    {% set image = resize_image(path='/services/pic4.jpeg', width=1200, height=800, op="scale") %}
+    {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
           <img src="{{ image.url }}" />
     <div
-      class="absolute mx-auto inset-x-0 bottom-4 rounded-full bg-gray-200 h-12 w-[300px] text-2xl text-center justify-center"
+      class="absolute mx-auto inset-x-0 bottom-4 bg-gray-200 h-12 w-[300px] text-2xl text-center justify-center"
     >
       commission inquiry
     </div>
@@ -68,9 +68,10 @@
         </h3>
       </div>
     </div>
-    <div class="grid grid-cols-2 gap-20 font-inria justify-center items-center py-10">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-20 font-inria justify-center items-center py-10">
       <div>
-        <img src="https://via.placeholder.com/657x392" />
+        {% set image = resize_image(path='/services/pic5.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" />
       </div>
       <div>
         <h3 class="justify-right">
@@ -81,7 +82,8 @@
         </h3>
       </div>
       <div>
-        <img src="https://via.placeholder.com/657x392" />
+        {% set image = resize_image(path='/services/pic6.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" />
       </div>
       <div>
         <h3 class=" text-center">
@@ -92,7 +94,8 @@
         </h3>
       </div>
       <div>
-        <img src="https://via.placeholder.com/657x392" />
+        {% set image = resize_image(path='/services/pic7.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" />
       </div>
       <div>
         <h3 class=" text-center">
@@ -107,14 +110,13 @@
       <div class="text-3xl font-spectral py-5 text-center">
         <h1>TESTIMONIALS</h1>
       </div>
-      <hr />
     </div>
-    <div class="flex flex-row justify-center py-10 items-center">
-      <div class="flex flex-col justify-center items-center w-1/2">
-        <div class="text-2xl font-spectral py-5 text-center">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-10 items-center">
+      <div class="justify-center items-center">
+        <div class="text-2xl font-spectral  text-center">
           <h1>CLIENT 1</h1>
         </div>
-        <div class="px-20">
+        <div >
           <h3 class="font-inria text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
@@ -122,15 +124,16 @@
             cillum dolore eu fug.
           </h3>
         </div>
-        <div class="py-5">
-          <img src="https://via.placeholder.com/538x285" />
+        <div >
+          {% set image = resize_image(path='/services/pic1.jpg', width=538, height=235, op="scale") %}
+          <img src="{{ image.url }}" />
         </div>
       </div>
-      <div class="flex flex-col justify-center items-center w-1/2">
-        <div class="text-2xl font-spectral py-5 text-center">
+      <div class="justify-center items-center">
+        <div class="text-2xl font-spectral text-center">
           <h1>CLIENT 2</h1>
         </div>
-        <div class="px-20">
+        <div >
           <h3 class="font-inria text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
@@ -138,8 +141,9 @@
             cillum dolore eu fug.
           </h3>
         </div>
-        <div class="py-5">
-          <img src="https://via.placeholder.com/538x285" />
+        <div>
+          {% set image = resize_image(path='/services/pic2.jpg', width=538, height=235, op="scale") %}
+          <img src="{{ image.url }}" />
         </div>
       </div>
     </div>
