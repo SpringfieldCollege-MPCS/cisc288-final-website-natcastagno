@@ -44,7 +44,9 @@
     </div>
   </div>
 
-  <div class="relative h-[912px] full-width bg-slate-300 mt-12">
+  <div class="relative  full-width mt-12">
+    {% set image = resize_image(path='/services/pic4.jpeg', width=1200, height=800, op="scale") %}
+          <img src="{{ image.url }}" />
     <div
       class="absolute mx-auto inset-x-0 bottom-4 rounded-full bg-gray-200 h-12 w-[300px] text-2xl text-center justify-center"
     >
