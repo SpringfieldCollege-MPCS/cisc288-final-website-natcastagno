@@ -10,6 +10,12 @@ module.exports = {
         'title': ['Sorts Mill Goudy', 'sans-serif'],
         'spectral': ['Spectral SC', 'sans-serif'],
         'inria' : ['Inria Sans', 'sans-serif'],
+      },
+      screens: {
+        'mobile' : '414px',
+        'tablet' : '912px',
+        'laptop' : '1024px',
+        'lg': '1240px',
       }
     }
   },
