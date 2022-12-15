@@ -17,7 +17,7 @@
         </section>
 
         <article class="pb-32">
-            <div class=" relative w-full grid grid-cols-4 grid-rows-2  content-evenly ml-4">
+            <div class=" relative full-width grid grid-cols-4 grid-rows-2 content-evenly">
                 <div>
                     {% set image = resize_image(path='/artiststatement/img1.jpg', width=300, height=300, op="scale") %}
                     <img src="{{ image.url }}" class="-mr-10"/>
@@ -50,8 +50,11 @@
                     <img src="{{ image.url }}" class="-mt-10 -ml-10"/>
                 </div>
 
-                <button class="w-72 h-12 border absolute insert-x-0 left-[516px] bottom-24 bg-[#F0E0CB] text-[16px] align-bottom font-spectral">WHAT INSPIRES MY ART</button>
+                <button class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] h-12 w-[300px] text-[16px] text-center justify-center font-spectral"
+                >WHAT INSPIRES MY ART</button>
               </div>
+
+        </article>
 
         <section>
 
