@@ -20,8 +20,8 @@
             <li>
               {% for menu in config.extra.menu_items %}
                 {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
-                {% set normal_class = "text-black font-title hover:text-black hover:underline underline-offset-4 mr-4 pr-4" %}
-                {% set active_class = "text-black font-title font-semibold underline decoration-black underline-offset-4 mr-4 pr-4" %}
+                {% set normal_class = "text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4" %}
+                {% set active_class = "text-black font-title underline decoration-black underline-offset-4 mr-4 pr-4" %}
                 <a {% if current_url and current_url == link_url %}
                   class="{{active_class}}"
                   {% else %}
