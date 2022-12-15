@@ -1,15 +1,15 @@
 
 {% macro header() %}
-<header>
+<header class="">
   <nav class="full-width">
-    <div class="text-center py-2 font-spectral bg-[#F0E0CB]">
+    <div class="full-width text-center py-2 font-spectral bg-[#F0E0CB]">
         <h1>CLICK HERE FOR NEWS AND UPCOMING EVENTS</h1>
       </div>
       
       
       <div x-data="{
         open: false
-      }" class ="flex flex-row justify-between py-8 px-8">
+      }" class ="container mx-auto flex flex-row justify-between py-8">
 
         <div class="flex justify-left items-center bg-white-300  ">
           <svg @click="open = !open; console.log(open)" xmlns="http://www.w3.org/2000/svg" class="visible md:invisible h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -22,7 +22,7 @@
                 {% set link_url = menu.url | replace(from="$BASE_URL", to=config.base_url) %}
                 {% set normal_class = "text-black font-title hover:text-black hover:underline underline-offset-4 mr-4 pr-4" %}
                 {% set active_class = "text-black font-title font-semibold underline decoration-black underline-offset-4 mr-4 pr-4" %}
-                <a {% if current_url and current_url is starting_with(link_url) %}
+                <a {% if current_url and current_url is starting_with(link_url) and link_url != config.base_url  %}
                   class="{{active_class}}"
                   {% else %}
                    class="{{ normal_class }}"
@@ -52,3 +52,5 @@
 </header>
 
 {% endmacro %}
+
+<!-- or current_url == link_url  -->
