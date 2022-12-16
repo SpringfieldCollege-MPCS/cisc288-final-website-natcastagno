@@ -12,6 +12,58 @@
   <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js"> </script>
 
+  <script>
+    //contact form
+    //entry.853001137=NAME&entry.956679658=NAME&entry.1587458589=EMAIL&entry.287059056=MESSAGE
+    const FORM_URL =
+    "https://docs.google.com/forms/u/1/d/e/1FAIpQLSfQcMQo1H0V73lq3k173RXSntA8LIiI-0ACi04p7U6hIg2wzw/formResponse";
+    const FIRST_NAME = "entry.231463248";
+    const LAST_NAME = "entry.1563360268";
+    const EMAIL = "entry.1713856432";
+    const REQUEST = "entry.287155814";
+    const MESSAGE = "entry.2077739384";
+ 
+    function submitForm(formData) {
+      console.log(
+        `Received - firstname: ${formData.firstname}; lastname: ${formData.lastname}; email: ${formData.email}; request: ${formData.request}; message: ${formData.message}`
+      );
+      console.log("Preparing to submit data to the Google Form");
+
+      // collecting all data into an object
+      const formDetails = {};
+      formDetails[FIRST_NAME] = formData.firstname;
+      formDetails[LAST_NAME] = formData.lastname;
+      formDetails[EMAIL] = formData.email;
+      formDetails[REQUEST] = formData.request;
+      formDetails[MESSAGE] = formData.message;
+      // convert the javascript formDetails object to URL string for POST request
+      const formBodyString = new URLSearchParams(formDetails).toString();
+      // uncomment to see the url encoded string
+      console.log(formBodyString)
+
+      // posting data to our google form
+      fetch(FORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        mode: "no-cors",
+        body: formBodyString,
+      }).then(() => {
+        console.log("Success!");
+        // show message
+        formData.showMessage = true;
+        formData.firstname = '';
+        formData.lastname = '';
+        formData.email = '';
+        formData.request = '';
+        formData.message = '';
+          // remove message in 2 seconds
+        setTimeout(() => formData.showMessage = false, 2000);
+      });
+    }
+  </script>
+
   
 
 </head>
