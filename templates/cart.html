@@ -7,36 +7,39 @@
             <div class=" px-8 md:px-16 pb-8  md:pb-16">
                 <div class="grid grid-cols-3 gap-4 md:gap-6 py-8 md:py-14 border-t-2 border-y-black">
                     <div class="pl-2 md:pl-10">
-                        <img src="https://via.placeholder.com/297x192" alt="Item 1">
+                        {% set image = resize_image(path='/shop/5pic.jpeg', width=297, height=192, op="scale") %}
+                        <img src="{{ image.url }}" />
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-sm md:text-xl font-inria">Item 1</p>
+                        <p class="text-sm md:text-xl font-inria">Longmeadow vi</p>
                         <p class="text-sm md:text-base">8x10</p>
                     </div>
-                    <div class="justify-self-center text-sm md:text-base p-4">00.00</div>
+                    <div class="justify-self-center text-sm md:text-base p-4">$40.00</div>
                 </div>
         
                 <div class="grid grid-cols-3 gap-4 md:gap-6 pb-8 md:pb-14">
                     <div class="pl-2 md:pl-10">
-                        <img src="https://via.placeholder.com/297x192" alt="Item 2">
+                        {% set image = resize_image(path='/shop/2pic.jpeg', width=297, height=192, op="scale") %}
+                        <img src="{{ image.url }}" />
                     </div>
                     <div class="flex flex-col">
-                        <p class="text-sm md:text-xl font-inria">Item 2</p>
-                        <p class="text-sm md:text-base">8x10</p>
+                        <p class="text-sm md:text-xl font-inria">York i</p>
+                        <p class="text-sm md:text-base">5x7</p>
                     </div>
-                    <div class="justify-self-center text-sm md:text-base p-4">00.00</div>
+                    <div class="justify-self-center text-sm md:text-base p-4">$90.00</div>
                 </div>
         
                 <div class="grid grid-cols-3 gap-6 justify-center pt-16 border-t-2 border-y-black">
                     <div class="pl-10 justify-self-center text-xl md:text-2xl font-spectral">SUBTOTAL</div>
-                    <div class="col-start-3 justify-self-center">00.00</div>
+                    <div class="col-start-3 justify-self-center">130.00</div>
                 </div>
             </div>             
         </section>
         
         <article id="Submit button">
-            <div class="grid grid-cols-3 gap-6 pb-16">
-                <button class=" col-start-2 justify-self-center text-xl md:text-2xl w-64 h-12 border border-black font-spectral ">SUBMIT</button>
+            <div class="pb-16 relative">
+                <button class="absolute bottom-10 inset-x-1/2 w-24 md:w-64 h-8 md:h-12 left-[150px] md:left-[560px] border-black border-2  bg-white align-bottom font-spectral z-10">Submit</button>
+                <button class="absolute bottom-8 inset-x-1/2 w-24 md:w-64 h-8 md:h-12 left-[150px] md:left-[560px] border-black border-2  bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1">C</button>
             </div>
         </article>
     </div>
