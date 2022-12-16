@@ -29,24 +29,24 @@
           </div>
           <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-28 pb-36">
 
-            {% set data = ["content/shop/1pic.jpeg", "content/shop/2pic.jpeg", "content/shop/3pic.jpeg", "content/shop/4pic.jpeg", "content/shop/5pic.jpeg",
-            "content/shop/6pic.jpeg", "content/shop/7pic.jpeg", "content/shop/8pic.jpeg", "content/shop/9pic.jpeg", "content/shop/10pic.jpeg", "content/shop/11pic.jpeg", "content/shop/12pic.jpeg", 
-             "content/shop/13pic.jpeg", "content/shop/14pic.jpeg", "content/shop/16pic.jpeg", "content/shop/16pic.jpeg", "content/shop/17pic.jpeg", "content/shop/18pic.jpeg"]  %}
+            {% set data = ["shop/1pic.jpeg", "shop/2pic.jpeg", "shop/3pic.jpeg", "shop/4pic.jpeg", "shop/5pic.jpeg",
+            "shop/6pic.jpeg", "shop/7pic.jpeg", "shop/8pic.jpeg", "shop/9pic.jpeg", "shop/10pic.jpeg", "shop/11pic.jpeg", "shop/12pic.jpeg", 
+             "shop/13pic.jpeg", "shop/14pic.jpeg", "shop/16pic.jpeg", "shop/16pic.jpeg", "shop/17pic.jpeg", "shop/18pic.jpeg"]  %}
             {% for asset in page.extra.art_pieces -%} 
                 {%- if asset.image_path is matching("[.](jpg|png|jpeg)$") -%}
                     {% set image = resize_image(path=asset.image_path, width=436, height=540, op="fill") %}
                     {%- if loop.index <= 6 -%}
-                      <a href="{{ get_url(path=asset.image_path) }}" target="_blank" :class="hide_first ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_first ? 'hidden': ''  ">
                         
                       <img src="{{ image.url }}" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 12 %}
-                      <a href="{{ get_url(path=asset.image_path) }}"  target="_blank" :class="hide_second ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}"  class="spotlight" data-download="true" :class="hide_second ? 'hidden': ''  ">
                         
                       <img src="{{ image.url }}" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 18 %}
-                      <a href="{{ get_url(path=asset.image_path) }}" target="_blank" :class="hide_third ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_third ? 'hidden': ''  ">
                         
                       <img src="{{ image.url }}" class="mt-0 mb-0" />
                       </a>
