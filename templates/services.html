@@ -47,11 +47,8 @@
   <div class="relative  full-width mt-12">
     {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
           <img src="{{ image.url }}" />
-    <div
-      class="absolute mx-auto inset-x-0 bottom-4 bg-gray-200 h-12 w-[300px] text-2xl text-center justify-center"
-    >
-      commission inquiry
-    </div>
+          <button class="absolute bottom-10 inset-x-1/2 w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
+          <button class="absolute bottom-8 inset-x-1/2 w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1"></button>
   </div>
 
   <div class="container mx-auto">
@@ -111,20 +108,19 @@
         <h1>TESTIMONIALS</h1>
       </div>
     </div>
-    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-5 justify-center py-10 items-center">
-      <div class="justify-center items-center">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 py-10 ">
+      <div class="justify-items-center">
         <div class="text-2xl font-spectral  text-center">
           <h1>CLIENT 1</h1>
         </div>
         <div >
-          <h3 class="font-inria text-center">
+          <h3 class="font-inria text-center px-4 pb-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fug.
+            
           </h3>
         </div>
-        <div >
+        <div>
           {% set image = resize_image(path='/services/pic1.jpg', width=538, height=235, op="scale") %}
           <img src="{{ image.url }}" />
         </div>
@@ -134,11 +130,10 @@
           <h1>CLIENT 2</h1>
         </div>
         <div >
-          <h3 class="font-inria text-center">
+          <h3 class="font-inria text-center pb-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fug.
+         
           </h3>
         </div>
         <div>
@@ -149,11 +144,8 @@
     </div>
 
     <div class="flex flex-row justify-center items-center py-10">
-      <button
-        class="bg-gray-200 text-black text-2xl py-2 px-4 w-[300px] rounded-full"
-      >
-        commission inquiry
-      </button>
+      <button class="absolute  w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
+      <button class="absolute  w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral mt-4 ml-2"></button>
     </div>
   </div>
 </div>
