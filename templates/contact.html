@@ -1,38 +1,77 @@
 {% extends "base.html" %}
  {% block content %}
-    <div class=" pr-5">
-        <h1 class="text-[64px] text-right">
-            CONTACT
-          </h1>
-    <div class="grid grid-cols-2 gap-[134px] text-[32px] text-left p-x-[122px] pt-[83px]">
-        
-        <div>
-            <hr>
-            First Name
-        </div>
-        <div>
-            <hr>
-            Last Name</div>
+ <section class="prose">
+  <div class=" pr-5 container mx-auto w-screen">
+    <h1 class="flex justify-end text-black text-2xl md:text-3xl lg:text-5xl font-thin pr-28 pb-20 font-title">CONTACT</h1>
 
-    </div>
-    <div class="pt-[154px] text-[32px] text-left ">
-        <hr>
-        Email 
-    </div>
-    <div class="flex flex-row justify-center items-center py-10">
-        <button class="bg-gray-200 text-black text-[32px] py-2 px-4 w-[300px] rounded-full">
-          Request Type
-        </button>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="text-[32px] text-center">
-          <h1>Message</h1>
-        </div>
-        <div>
-            <img src="https://via.placeholder.com/948x296">
-        </div>
-      </div>
+    <div class="px-8 md:px-36 pb-8  md:pb-16">
+      <form class="grid grid-cols-2 gap-8 md:gap-16"
+					@submit.prevent="submitForm($data)">
+
+						<label class=" block px-6 py-4 ">
+							<input type="text"
+							class="block form-input mt-1 h-12 w-full border-b-2 border-black"
+							name="form-firstname"
+							required
+							x-model="firstname"
+              placeholder=""/>
+              <span class=" text-black font-inria">First Name</span>
+						</label>
+
+            <label class=" block px-6 py-4 ">
+							<input type="text"
+							class="block form-input mt-1 h-12 w-full border-b-2 border-black"
+							name="form-lastname"
+							required
+							x-model="lastname"
+              placeholder=""/>   
+              <span class="text-lg font-inria">Last Name</span>
+						</label>
 
 
+						<label class="block col-span-2 px-6 ">
+							<input type="text"
+							class="block form-input mt-1 h-12 w-full border-b-2 border-black"
+							name="form-email"
+							required
+							x-model="email"
+              placeholder=""/>
+              <span class="text-lg font-inria">Email</span>
+						</label>
+
+            <label class="block col-span-2 px-6 tablet:px-56">
+							<input type="text"
+							class="block form-input mt-1 h-12 w-full border-b-2 border-black"
+							name="form-request"
+							required
+							x-model="request"
+              placeholder=""/>
+              <p class="text-lg font-inria text-center">Request</p>
+						</label>
+
+						<label class="block col-span-2 px-6">
+							<p class="text-lg font-inria justify-self-center text-center">Message</p>
+							<textarea
+              				class=" block form-inria mt-1 block w-full h-56 border-black border-2 rounded-lg"
+              				rows="3"
+              				name="form-message"
+              				required
+              				x-model="message"
+              				placeholder="Type Here.."
+            				></textarea>
+						</label>
+
+						<div class="pb-16 relative">
+              <button class="absolute bottom-10 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border-2  bg-white align-bottom font-spectral z-10">Send Message</button>
+              <button class="absolute bottom-8 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border-2  bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1">C</button>
+          </div>
+					</form>
     </div>
+    
+
+  </div>
+
+
+ </section>
+    
     {% endblock content %}
