@@ -16,39 +16,46 @@
             </div>
         </section>
 
-        <article class="pb-8 md:pb-32 container mx-auto w-screen">
-            <div class=" relative grid grid-cols-4 grid-rows-2 content-evenly sm:ml-4 md:ml-8 lg:ml-4">
+        <article class="pb-8 md:pb-32 ">
+            <div class=" relative grid grid-cols-4 grid-rows-2 items-center content-evenly sm:ml-4 md:ml-8 lg:ml-4">
                 <div>
-                    {% set image = resize_image(path='/artiststatement/img1.jpg', width=300, height=300, op="scale") %}
-                    <img src="{{ image.url }}" class="-mr-10"/>
-                </div>
-
-                <div class="h-1/3">
-                    {% set image = resize_image(path='/artiststatement/img2.jpg', width=300, height=300, op="scale") %}
-                    <img src="{{ image.url }}" class="-ml-6"/>
-                </div>
-
-                <div class="col-start-3 row-span-3 justify-self-stretch">
-                    {% set image = resize_image(path='/artiststatement/img3.jpg', width=581, height=1165, op="scale") %}
-                    <img src="{{ image.url }}" class="-ml-10"/>
-
+                    {% set image = resize_image(path='/artiststatement/img1.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" class=""/>
                 </div>
 
                 <div>
-                    {% set image = resize_image(path='/artiststatement/img4.jpg', width=300, height=300, op="scale") %}
-                    <img src="{{ image.url }}" class="-ml-10"/>
+                    {% set image = resize_image(path='/artiststatement/img2.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" class=""/>
                 </div>
 
+                <div>
+                    {% set image = resize_image(path='/artiststatement/img4.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" class=""/>
+                </div>
+
+                <div>
+                    {% set image = resize_image(path='/artiststatement/img3.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" class=""/>
+                </div>
+
+            
                 <div class="col-span-2 content-start ">
-                    {% set image = resize_image(path='/artiststatement/img5.jpg', width=600, height=350, op="scale") %}
-                    <img src="{{ image.url }}" class="-mt-10"/>
+                    {% set image = resize_image(path='/artiststatement/img5.jpg', width=600, height=350, op="fill") %}
+                    <img src="{{ image.url }}" class="-mt-6"/>
 
                 </div>
 
-                <div class="col-start-4 row-start-2">
-                    {% set image = resize_image(path='/artiststatement/img6.jpg', width=300, height=349, op="scale") %}
-                    <img src="{{ image.url }}" class="-mt-10 -ml-10"/>
+                <div class="col-start-3">
+                    {% set image = resize_image(path='/artiststatement/img6.jpg', width=300, height=349, op="fill") %}
+                    <img src="{{ image.url }}" class="-mt-6 -ml-2"/>
                 </div>
+
+                <div class="col-start-4">
+                    {% set image = resize_image(path='/artiststatement/img7.jpg', width=300, height=349, op="fill") %}
+                    <img src="{{ image.url }}" class="-mt-6 -ml-2"/>
+                </div>
+
+                
 
                 <button class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] h-8 md:h-12 w-[200px] md:w-[300px] text-[12px] md:text-[16px] text-center justify-center font-spectral"
                 >WHAT INSPIRES MY ART</button>
@@ -66,7 +73,7 @@
                 <div class="flex flex-col">
                     {% set image = resize_image(path='/artiststatement/c1.jpg', width=787, height=475, op="scale") %}
                     <img src="{{ image.url }}"/>
-                    <div class="text-right"><a href="">Shop The Collection -> </a></div>
+                    <div class="text-right"><a href="/shop/">Shop The Collection -> </a></div>
                 </div>
 
                 <div class="pt-2 md:pt-6 font-spectral">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </div>
@@ -80,7 +87,7 @@
                 <div class="flex flex-col">
                     {% set image = resize_image(path='/artiststatement/c2.jpg', width=787, height=475, op="scale") %}
                     <img src="{{ image.url }}"/>
-                    <div class="text-right"><a href="">Shop The Collection -> </a></div>
+                    <div class="text-right"><a href="/shop/">Shop The Collection -> </a></div>
                 </div>
 
                 <div class="pt-6 font-spectral">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </div>
@@ -94,7 +101,7 @@
                 <div class="flex flex-col">
                     {% set image = resize_image(path='/artiststatement/c3.jpg', width=787, height=475, op="scale") %}
                     <img src="{{ image.url }}"/>
-                    <div class="text-right"><a href="">Shop The Collection -> </a></div>
+                    <div class="text-right"><a href="/shop/">Shop The Collection -> </a></div>
                 </div>
 
                 <div class="pt-6 font-spectral">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in </div>
