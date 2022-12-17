@@ -16,11 +16,15 @@ module.exports = {
         'tablet' : '912px',
         'laptop' : '1024px',
         'lg': '1240px',
+      },
+      colors: {
+        'cutepink': '#E0C5C6'
       }
     }
   },
   variants: {},
   plugins: [
       require('@tailwindcss/typography'),
+      require('@tailwindcss/forms'),
   ],
 };

@@ -65,7 +65,7 @@
         </h3>
       </div>
     </div>
-    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-20 font-inria justify-center items-center py-10">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-20 font-inria justify-items-center py-10">
       <div>
         {% set image = resize_image(path='/services/pic5.jpg', width=657, height=392, op="scale") %}
           <img src="{{ image.url }}" />
@@ -108,8 +108,8 @@
         <h1>TESTIMONIALS</h1>
       </div>
     </div>
-    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 py-10 ">
-      <div class="justify-items-center">
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 py-10 justify-items-center ">
+      <div class="flex flex-col items-center justify-center">
         <div class="text-2xl font-spectral  text-center">
           <h1>CLIENT 1</h1>
         </div>
@@ -125,7 +125,7 @@
           <img src="{{ image.url }}" />
         </div>
       </div>
-      <div class="justify-center items-center">
+      <div class="flex flex-col items-center justify-center">
         <div class="text-2xl font-spectral text-center">
           <h1>CLIENT 2</h1>
         </div>
@@ -143,10 +143,10 @@
       </div>
     </div>
 
-    <div class="flex flex-row justify-center items-center py-20">
+    <div class="relative flex flex-row justify-center items-center py-20">
       <a href="/contact/">
-      <button class="absolute  w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
-      <button class="absolute  w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral mt-2 ml-1"></button>
+      <button class="absolute inset-x-1/2 -ml-20 w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
+      <button class="absolute inset-x-1/2 -ml-[84px] w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral mt-2 "></button>
     </a>
     </div>
   </div>

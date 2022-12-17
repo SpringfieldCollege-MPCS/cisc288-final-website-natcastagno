@@ -1,7 +1,7 @@
 {% macro footer() %}
 
 <footer>
-  <div class="grid grid-cols-9 gap-x-4 justify-end bg-[#E0C5C6] text-left pt-10 pb-20 full-width">
+  <div class="grid grid-cols-9 gap-x-4 justify-end bg-cutepink text-left pt-10 pb-20 full-width">
     <div class="justify-self-center col-span-3 ">
       {% set image = resize_image(path='content/footerlogo.png', width=100, height=100, op="fill") %}
       <img src="{{ image.url }}">
@@ -12,7 +12,7 @@
         <p class=" font-spectral">Home</p>
       </a>
       <ul class="cursor-pointer font-title">
-        <li><a href="#">Events</a></li>
+        <li><a href="/">Events</a></li>
       </ul>
     </div>
   
@@ -21,9 +21,9 @@
         <p class="font-spectral">Shop</p>
       </a>
       <ul class="cursor-pointer font-title">
-        <li><a href="#">Collection 1</a></li>
-        <li><a href="#">Collection 2</a></li>
-        <li><a href="#">Collection 3</a></li>
+        <li><a href="/shop/">Collection 1</a></li>
+        <li><a href="/shop/">Collection 2</a></li>
+        <li><a href="/shop/">Collection 3</a></li>
       </ul>
     </div>
   
@@ -32,7 +32,7 @@
         <p class="font-spectral">Artist Statement</p>
       </a>
       <ul class="cursor-pointer font-title">
-        <li><a href="#">Collection Inspiration</a></li>
+        <li><a href="/artiststatement/">Collection Inspiration</a></li>
       </ul>
     </div>
   
@@ -41,8 +41,8 @@
         <p class="font-spectral">Services</p>
       </a>
       <ul class="cursor-pointer font-title">
-        <li><a href="#">Request</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/contact/">Request</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
   
