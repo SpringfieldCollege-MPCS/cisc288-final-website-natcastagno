@@ -47,8 +47,8 @@
   <div class="relative  full-width mt-12">
     {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
           <img src="{{ image.url }}" />
-          <a href="/contact/"><button class="absolute bottom-10 inset-x-1/2 w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
-          <button class="absolute bottom-8 inset-x-1/2 w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1"></button>
+          <a href="/contact/"><button class="absolute -ml-20 bottom-10 inset-x-1/2 w-40 h-8 border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
+          <button class="absolute bottom-8 -ml-[76px] inset-x-1/2 w-40 h-8 border-2 border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 "></button>
   </div>
 
   <div class="container mx-auto">
@@ -70,37 +70,31 @@
         {% set image = resize_image(path='/services/pic5.jpg', width=657, height=392, op="scale") %}
           <img src="{{ image.url }}" />
       </div>
-      <div>
-        <h3 class="justify-right">
+      <div  class="text-center ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fug.
-        </h3>
       </div>
       <div>
         {% set image = resize_image(path='/services/pic6.jpg', width=657, height=392, op="scale") %}
           <img src="{{ image.url }}" />
       </div>
       <div>
-        <h3 class=" text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fug.
-        </h3>
+          dolore eu fug
       </div>
       <div>
         {% set image = resize_image(path='/services/pic7.jpg', width=657, height=392, op="scale") %}
           <img src="{{ image.url }}" />
       </div>
       <div>
-        <h3 class=" text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fug.
-        </h3>
       </div>
     </div>
     <div class="flex flex-col">
