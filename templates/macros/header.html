@@ -9,7 +9,7 @@
     </div>
       
       
-    <div class ="md:mx-auto flex flex-row justify-between py-8">
+    <div class ="container md:mx-auto flex flex-row justify-between py-8">
 
         <div class="flex justify-left items-center bg-white-300  ">
           <svg @click="open = !open; console.log(open)" xmlns="http://www.w3.org/2000/svg" class="visivle md:invisible cursor-pointer h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -42,25 +42,25 @@
         <div x-show="open" class="top-0 left-0 w-1/2 z-10 bg-opacity-50 h-screen fixed drop-shadow-lg bg-white gap-y-2">
           <div class="flex flex-col items-start">
             <hr>
-            <div @click="open = false" class="cursor-pointer bg-[#F0E0CB] px-6 py-2 w-full font-title">X</div>
+            <div @click="open = false" class="cursor-pointer bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink px-6 py-2 w-full font-title">X</div>
             <hr>
-            <div class="bg-[#F0E0CB] py-2 px-6 w-full">
+            <div class="bg-[#F0E0CB]  hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
               <a href="{{config.base_url}}" class="font-title">Home</a>
             </div>
             <hr>
-            <div class="bg-[#F0E0CB] py-2 px-6 w-full">
+            <div class="bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
               <a href="{{config.base_url}}/shop/" class="font-title">Shop</a>
             </div>
             <hr>
-            <div class="bg-[#F0E0CB] py-2 px-6 w-full">
+            <div class="bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
               <a href="{{config.base_url}}/artiststatement/" class="font-title">Artist Statement</a>
             </div>
             <hr>
-            <div class="bg-[#F0E0CB] py-2 px-6 w-full">
+            <div class="bg-[#F0E0CB] hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
               <a href="{{config.base_url}}/services/" class="font-title">Services</a>
             </div>
             <hr>
-            <div class="bg-[#F0E0CB] py-2 px-6 w-full">
+            <div class="bg-[#F0E0CB]  hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
               <a href="{{config.base_url}}/cart/" class="font-title">Cart</a>
             </div>
           </div>
