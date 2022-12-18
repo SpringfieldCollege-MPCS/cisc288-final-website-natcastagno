@@ -1,0 +1,73 @@
+
+   {% extends "base.html" %}
+   {% block content %}
+   <div class="container mx-auto px-8 md:px-16" x-data="{
+    hide_first: false,
+    hide_second: false,
+    hide_third: false,
+   }">
+        <h1 class="text-2xl md:text-3xl lg:text-5xl font-thin font-title text-right">
+          <a href="{{config.base_url}}/shop/">SHOP THE COLLECTIONS</a>
+          </h1>
+          <div class="flex flex-row gap-x-4 text-base md:text-xl font-spectral py-11">
+            <div div class="flex flex-col w-1/3">
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"><div  @click="hide_first = false; hide_second = false; hide_third = false;">All</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"><div @click="hide_first = false; hide_second = true; hide_third = true;">First Collection</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"> <div @click="hide_second = false; hide_first = true;  hide_third = true;">Second Collection</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"> <div @click="hide_third = false; hide_second = true; hide_first = true;">Third Collection</div></a>
+              </div>
+              <div class="flex flex-col w-1/3" ></div>
+              <div class="w-1/3">
+                <div class="flex flex-row justify-end items-center gap-2">
+                  <a href="#"> <div>Filter</div></a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                </div>
+                
+                </div>
+          </div>
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-28 pb-36">
+
+            {% set data = ["shop/1pic.jpeg", "shop/2pic.jpeg", "shop/3pic.jpeg", "shop/4pic.jpeg", "shop/5pic.jpeg",
+            "shop/6pic.jpeg", "shop/7pic.jpeg", "shop/8pic.jpeg", "shop/9pic.jpeg", "shop/10pic.jpeg", "shop/11pic.jpeg", "shop/12pic.jpeg", 
+             "shop/13pic.jpeg", "shop/14pic.jpeg", "shop/16pic.jpeg", "shop/16pic.jpeg", "shop/17pic.jpeg", "shop/18pic.jpeg"]  %}
+            {% for asset in page.extra.art_pieces -%} 
+                {%- if asset.image_path is matching("[.](jpg|png|jpeg)$") -%}
+                    {% set image = resize_image(path=asset.image_path, width=436, height=540, op="fill") %}
+                    {%- if loop.index <= 6 -%}
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="{{ image.url }}" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    {% elif loop.index <= 12 %}
+                      <a href="{{ get_url(path=asset.image_path) }}"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="{{ image.url }}" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    {% elif loop.index <= 18 %}
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="{{ image.url }}" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    {%- endif %} 
+                {%- endif %} 
+            {%- endfor %}
+
+
+
+          </div>
+          <div class="flex flex-row gap-x-4 text-2xl pb-11">
+            <div div class="flex flex-col w-1/3">
+              </div>
+              <div class="flex flex-col w-1/3" ></div>
+              <div class="flex flex-col font-spectral sm:text-left lg:text-right w-1/3">
+                1  2  3  4
+          </div>
+          </div>
+
+        </div>
+
+        {% endblock content %}
+
+        

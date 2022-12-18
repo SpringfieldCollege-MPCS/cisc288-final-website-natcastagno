@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+<section x-data="{
+	firstname: '',
+	lastname: '',
+	email: '',
+	request: '',
+	message: '',
+	showMessage: false
+  }">
+	<div class=" pr-5 container mx-auto w-screen">
+		<h1 class="flex justify-end text-black text-2xl md:text-3xl lg:text-5xl font-thin pr-28 pb-20 font-title">
+			CONTACT</h1>
+
+		<div class="px-8 md:px-36 pb-8  md:pb-16">
+			<form class="grid grid-cols-2 gap-8 md:gap-16" @submit.prevent="submitForm($data)">
+
+				<label class=" block px-6 py-4 outline-cutepink border-cutepink ring-cutepink ">
+					<input type="text"
+						class="block form-input mt-1 h-12 w-full border-b-2 outline-cutepink border-cutepink ring-cutepink"
+						name="form-firstname" required x-model="firstname" placeholder="" />
+					<span class=" text-lg font-inria">First Name</span>
+				</label>
+
+				<label class=" block px-6 py-4  outline-cutepink border-cutepink ring-cutepink">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2 outline-cutepink border-cutepink ring-cutepink"
+						name="form-lastname" required x-model="lastname" placeholder="" />
+					<span class="text-lg font-inria">Last Name</span>
+				</label>
+
+
+				<label class="block col-span-2 px-6  outline-cutepink border-cutepink ring-cutepink ">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2  outline-cutepink border-cutepink ring-cutepink"
+						name="form-email" required x-model="email" placeholder="" />
+					<span class="text-lg font-inria">Email</span>
+				</label>
+
+				<label class="block col-span-2 px-6 tablet:px-56  outline-cutepink border-cutepink ring-cutepink">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2  outline-cutepink border-cutepink ring-cutepink"
+						name="form-request" required x-model="request" placeholder="" />
+					<p class="text-lg font-inria text-center">Request</p>
+				</label>
+
+				<label class="block col-span-2  outline-cutepink border-cutepink ring-cutepink px-6">
+					<p class="text-lg font-inria justify-self-center text-center">Message</p>
+					<textarea class=" block form-inria mt-1 w-full h-56  outline-cutepink border-cutepink ring-cutepink border-2 rounded-lg" rows="3"
+						name="form-message" required x-model="message" placeholder="Type Here.."></textarea>
+				</label>
+
+				<div class="pb-16 relative">
+					<button id="send_message_button"
+						class="absolute bottom-10 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border hover:border-2  bg-white align-bottom font-spectral z-10">Send
+						Message</button>
+					<div
+						class="absolute bottom-8 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border  bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1">
+						C</div>
+				</div>
+			</form>
+		</div>
+
+
+	</div>
+
+
+</section>
+
+{% endblock content %}

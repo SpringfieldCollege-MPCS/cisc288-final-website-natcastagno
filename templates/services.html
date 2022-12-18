@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+ {% block content %}
+<div class="">
+  <div class="container mx-auto">
+    <h1 class="flex text-black text-2xl md:text-3xl lg:text-5xl font-thin justify-center md:justify-end md:pr-28 md:pb-6 lg:pb-10 font-title">SERVICES</h1>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 text-black gap-x-12 justify-items-center">
+      <div class="col-span-2 flex flex-col ">
+        <div>
+          <a href="{{config.base_url}}/contact/"><p class="text-3xl font-spectral text-right pt-6">SERVICE REQUEST</h1></a>
+        </div>
+        <div class="text-left  font-inria p-4 md:p-12">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+      <div class="col-span-3 flex flex-col justify-center items-center">
+        {% set image = resize_image(path='/services/services_1.jpg', width=897, height=588, op="scale") %}
+        <img src="{{ image.url }}" alt="Painting" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="flex flex-col items-center">
+      <div class="text-3xl font-spectral py-5 text-center">
+        <h1>BOOK A CONSULTATION</h1>
+      </div>
+      <div>
+        <h3 class=" font-inria text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative mt-12">
+    {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
+          <img class="full-width object-fill" src="{{ image.url }}" alt="Painting stuffs" loading="lazy" />
+          <a href="{{config.base_url}}/contact/"><button id="contact_button" class="absolute -ml-20 bottom-10 inset-x-1/2 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
+          <button id="contact_button"  class="absolute bottom-8 -ml-[76px] inset-x-1/2 w-40 h-8 border border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 "></button>
+  </div>
+
+  <div class="container mx-auto">
+    <div class="grid grid-row justify-center">
+      <div class="text-3xl font-spectral py-12 text-center">
+        <h1>CONSULTATION EXPERIENCE</h1>
+      </div>
+      <div>
+        <h3 class=" font-inria text-center py-6 px:16 md:px-32">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fug.
+        </h3>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-12 px-8 md:px-28">
+      <div>
+        {% set image = resize_image(path='/services/pic5.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" alt="textured paper" loading="lazy" />
+      </div>
+      <div class="text-center font-inria ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fug.</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-12 px-8 md:px-28">
+        <div>
+        {% set image = resize_image(path='/services/pic6.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" alt="painting of cloud" loading="lazy"/>
+      </div>
+      <div class="text-center font-inria ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fug</div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 py-12 px-8 md:px-28">
+        <div>{% set image = resize_image(path='/services/pic7.jpg', width=657, height=392, op="scale") %}
+          <img src="{{ image.url }}" alt="blue painting" loading="lazy"/></div>
+      <div class="text-center font-inria ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fug.
+      </div>
+     </div>
+
+    <div class="flex flex-col">
+      <div class="text-3xl font-spectral py-5 text-center">
+        <h1>TESTIMONIALS</h1>
+      </div>
+    </div>
+    <div class="grid sm:grid-cols-1 lg:grid-cols-2 gap-12 py-10 justify-items-center ">
+      <div class="flex flex-col items-center justify-center">
+        <div class="text-2xl font-spectral  text-center">
+          <h1>CLIENT 1</h1>
+        </div>
+        <div >
+          <h3 class="font-inria text-center px-4 pb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+            
+          </h3>
+        </div>
+        <div>
+          {% set image = resize_image(path='/services/pic1.jpg', width=538, height=235, op="scale") %}
+          <img src="{{ image.url }}" alt="painiting for client1" loading="lazy"/>
+        </div>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+        <div class="text-2xl font-spectral text-center">
+          <h1>CLIENT 2</h1>
+        </div>
+        <div >
+          <h3 class="font-inria text-center pb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt nisi ut aliquip ex ea commodo consequat.
+         
+          </h3>
+        </div>
+        <div>
+          {% set image = resize_image(path='/services/pic2.jpg', width=538, height=235, op="scale") %}
+          <img src="{{ image.url }}" alt="painting for client2" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="relative flex flex-row justify-center items-center py-20">
+      <a href="{{config.base_url}}/contact/">
+      <button id="contact_button" class="absolute inset-x-1/2 -ml-20 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
+      <button id="contact_button"  class="absolute inset-x-1/2 -ml-[76px] w-40 h-8 border border-black   bg-[#E0C5C6] align-bottom font-spectral mt-2 "></button>
+    </a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
