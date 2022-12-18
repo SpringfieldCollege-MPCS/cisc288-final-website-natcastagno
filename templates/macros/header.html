@@ -9,7 +9,7 @@
     </div>
       
       
-    <div class ="container md:mx-auto flex flex-row justify-between py-8">
+    <div class ="container md:mx-auto flex flex-row justify-between items-center py-4 md:py-8">
 
         <div class="flex justify-left items-center bg-white-300  ">
           <svg @click="open = !open; console.log(open)" xmlns="http://www.w3.org/2000/svg" class="visivle md:invisible cursor-pointer h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -32,37 +32,32 @@
           </ul>
         </div>
 
-        <div class="justify-self-end ">
-          {% set image = resize_image(path='content/Logo.png', width=90, height=90, op="fill") %}
+        <!-- <div class="justify-self-end h-[80px]"> -->
+          {% set image = resize_image(path='content/Logo.png', width=80, height=80, op="fill") %}
           <img src="{{ image.url }}" alt="Logo for header" class="w-12 md:w-20" />
-        </div>
+        <!-- </div> -->
 
         
 
-        <div x-show="open" class="top-0 left-0 w-1/2 z-10 bg-opacity-50 h-screen fixed drop-shadow-lg bg-white gap-y-2">
-          <div class="flex flex-col items-start">
+        <div x-cloak x-show="open" class="top-0 left-0 w-1/2 z-10  h-screen fixed drop-shadow-lg gap-y-2 bg-[#F0E0CB]">
+          <div class="flex flex-col items-start text-lg">
             <hr>
             <div @click="open = false" class="cursor-pointer bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink px-6 py-2 w-full font-title">X</div>
             <hr>
-            <div class="bg-[#F0E0CB]  hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
-              <a href="{{config.base_url}}" class="font-title">Home</a>
-            </div>
+              <a href="{{config.base_url}}" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Home</a>
             <hr>
-            <div class="bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
-              <a href="{{config.base_url}}/shop/" class="font-title">Shop</a>
-            </div>
+              <a href="{{config.base_url}}/shop/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Shop</a>
             <hr>
-            <div class="bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
-              <a href="{{config.base_url}}/artiststatement/" class="font-title">Artist Statement</a>
-            </div>
+
+              <a href="{{config.base_url}}/artiststatement/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Artist Statement</a>
+
             <hr>
-            <div class="bg-[#F0E0CB] hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
-              <a href="{{config.base_url}}/services/" class="font-title">Services</a>
-            </div>
+
+              <a href="{{config.base_url}}/services/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Services</a>
+
             <hr>
-            <div class="bg-[#F0E0CB]  hover:bg-white  hover:text-cutepink py-2 px-6 w-full">
-              <a href="{{config.base_url}}/cart/" class="font-title">Cart</a>
-            </div>
+
+              <a href="{{config.base_url}}/cart/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Cart</a>
           </div>
         </div>
     </div>    

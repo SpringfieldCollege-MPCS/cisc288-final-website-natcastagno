@@ -6,7 +6,7 @@
     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 text-black py-20 gap-x-12">
       <div class="col-span-2 flex flex-col ">
         <div>
-          <a href="/contact/"><p class="text-3xl font-spectral text-right pt-6">SERVICE REQUEST</h1></a>
+          <a href="{{config.base_url}}/contact/"><p class="text-3xl font-spectral text-right pt-6">SERVICE REQUEST</h1></a>
         </div>
         <div class="text-left  font-inria p-12">
           <p>
@@ -47,7 +47,7 @@
   <div class="relative full-width mt-12">
     {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
           <img src="{{ image.url }}" alt="Painting stuffs" loading="lazy" />
-          <a href="/contact/"><button id="contact_button" class="absolute -ml-20 bottom-10 inset-x-1/2 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
+          <a href="{{config.base_url}}/contact/"><button id="contact_button" class="absolute -ml-20 bottom-10 inset-x-1/2 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
           <button id="contact_button"  class="absolute bottom-8 -ml-[76px] inset-x-1/2 w-40 h-8 border border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 "></button>
   </div>
 
@@ -141,7 +141,7 @@
     </div>
 
     <div class="relative flex flex-row justify-center items-center py-20">
-      <a href="/contact/">
+      <a href="{{config.base_url}}/contact/">
       <button id="contact_button" class="absolute inset-x-1/2 -ml-20 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button>
       <button id="contact_button"  class="absolute inset-x-1/2 -ml-[76px] w-40 h-8 border border-black   bg-[#E0C5C6] align-bottom font-spectral mt-2 "></button>
     </a>
