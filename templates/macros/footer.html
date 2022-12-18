@@ -4,7 +4,7 @@
   <div class="grid grid-cols-9 gap-x-4 justify-end bg-cutepink text-left pt-10 pb-20 full-width">
     <div class="justify-self-center col-span-3 ">
       {% set image = resize_image(path='content/footerlogo.png', width=100, height=100, op="fill") %}
-      <img src="{{ image.url }}">
+      <img src="{{ image.url }}" alt="Logo for footer">
     </div>
     
     <div class="text-xs md:text-base p-1 pr-4 md:pr-1 justify-self-end">
