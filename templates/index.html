@@ -9,21 +9,21 @@
         <div>
           <a href="/shop/">
           {% set image = resize_image(path='/home/home1.jpg', width=516, height=320, op="scale") %}
-          <img src="{{ image.url }}" /></a>
+          <img src="{{ image.url }}" loading="lazy" /></a>
           <a href="/shop/" class="hover:underline hover:underline-offset-4"><p class=" text-black sm:text-base md:text-xl text-center p-2 font-spectral">HARVEST COLLECTION</p></a>
         </div>
   
         <div>
           <a href="/shop/">
           {% set image = resize_image(path='/home/home2.jpg', width=516, height=320, op="scale") %}
-          <img src="{{ image.url }}" /></a>
+          <img src="{{ image.url }}" loading="lazy" /></a>
           <a href="/shop/" class="hover:underline hover:underline-offset-4"><p class="text-black sm:text-base md:text-xl text-center p-2 font-spectral">LONGMEADOW COLLECTION</p></a>
         </div>
   
         <div>
           <a href="/shop/">
           {% set image = resize_image(path='/home/home3.jpg', width=516, height=320, op="scale") %}
-          <img src="{{ image.url }}" /></a>
+          <img src="{{ image.url }}" loading="lazy" /></a>
           <a href="/shop/" class="hover:underline hover:underline-offset-4"><p class="text-black sm:text-base md:text-xl text-center p-2 font-spectral">AMHERST COLLECTION</p></a>
         </div>
       </div>
@@ -32,7 +32,7 @@
     <article id="About" class="grid grid-cols-1 tablet:grid-cols-1 lg:grid-cols-2 grid-rows-1 tablet:gap-6 md:gap-16 items-center sm:p-16 md:p-32">
       <div class="justify-self-center">
         {% set image = resize_image(path='/home/home4.jpg', width=582, height=734, op="scale") %}
-        <img src="{{ image.url }}" class="h-96 w-80"/>
+        <img src="{{ image.url }}" loading="lazy" class="h-96 w-80"/>
       </div>
   
       <div class="flex flex-col">
@@ -50,22 +50,22 @@
   
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-6 md:grid-rows-2 gap-14 justify-items-center sm:px-22 md:px-26 lg:px-44 sm:pb-8 lg:pb-16">
           {% set image = resize_image(path='/home/event1.jpeg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
 
           {% set image = resize_image(path='/home/event2.jpeg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
 
           {% set image = resize_image(path='/home/event3.jpg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
           
           {% set image = resize_image(path='/home/event4.jpg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
 
           {% set image = resize_image(path='/home/event5.jpg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
 
           {% set image = resize_image(path='/home/event6.jpg', width=383, height=480, op="scale") %}
-          <img src="{{ image.url }}" class="w-64 h-80"/>
+          <img src="{{ image.url }}" loading="lazy" class="w-64 h-80"/>
         </div>
   
         <div class="py-16">
@@ -82,7 +82,7 @@
   
     <div class="relative full-width border-b-2 border-black">
       {% set image = resize_image(path='/home/fullimage.jpg', width=1900, height=800, op="fill") %}
-          <img class="w-full h-[400px] object-cover" src="{{ image.url }}" />
+          <img class="w-full h-[400px] object-cover" src="{{ image.url }}" loading="lazy"/>
       <!-- <div class="absolute bottom-10 mx-auto w-42 inset-x-0 text-center justify-center"> -->
         <!-- <div class="relative justify-center mx-auto w-42"> -->
           <a href="/contact/">
