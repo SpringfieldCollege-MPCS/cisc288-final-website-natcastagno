@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Nat </title>
+  <link rel="stylesheet" href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/favicon-16x16.png">
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js"> </script>
+
+  <script>
+    // https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQcMQo1H0V73lq3k173RXSntA8LIiI-0ACi04p7U6hIg2wzw/formResponse
+    const FORM_URL =
+    "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQcMQo1H0V73lq3k173RXSntA8LIiI-0ACi04p7U6hIg2wzw/formResponse";
+    const FIRST_NAME = "entry.231463248";
+    const LAST_NAME = "entry.1563360268";
+    const EMAIL = "entry.1713856432";
+    const REQUEST = "entry.287155814";
+    const MESSAGE = "entry.2077739384";
+ 
+    function submitForm(formData) {
+      console.log(
+        `Received - firstname: ${formData.firstname}; lastname: ${formData.lastname}; email: ${formData.email}; request: ${formData.request}; message: ${formData.message}`
+      );
+      console.log("Preparing to submit data to the Google Form");
+
+      // collecting all data into an object
+      const formDetails = {};
+      formDetails[FIRST_NAME] = formData.firstname;
+      formDetails[LAST_NAME] = formData.lastname;
+      formDetails[EMAIL] = formData.email;
+      formDetails[REQUEST] = formData.request;
+      formDetails[MESSAGE] = formData.message;
+      // convert the javascript formDetails object to URL string for POST request
+      const formBodyString = new URLSearchParams(formDetails).toString();
+      // uncomment to see the url encoded string
+      console.log(formBodyString)
+
+      // posting data to our google form
+      fetch(FORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        mode: "no-cors",
+        body: formBodyString,
+      }).then(() => {
+        console.log("Success!");
+        // show message
+        formData.showMessage = true;
+        formData.firstname = '';
+        formData.lastname = '';
+        formData.email = '';
+        formData.request = '';
+        formData.message = '';
+          // remove message in 2 seconds
+        setTimeout(() => formData.showMessage = false, 2000);
+      });
+    }
+  </script>
+
+  
+
+</head>
+
+<body class="bg-[#F5F5F5]">
+
+  
+    
+<header class="" x-data="{
+  open: false
+}" >
+  <nav class="full-width">
+    <div class="full-width text-center py-2 font-spectral bg-[#F0E0CB] hover:underline hover:underline-offset-4">
+      <a href="#Events"><h1>CLICK HERE FOR NEWS AND UPCOMING EVENTS</h1></a>
+    </div>
+      
+      
+    <div class ="container md:mx-auto flex flex-row justify-between items-center py-4 md:py-8">
+
+        <div class="flex justify-left items-center bg-white-300  ">
+          <svg @click="open = !open; console.log(open)" xmlns="http://www.w3.org/2000/svg" class="visivle md:invisible cursor-pointer h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <ul class="hidden md:flex overflow-x-hidden mr-10 ">
+            <li>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno">HOME</a>
+              
+                
+                
+                
+                <a 
+                  class="text-black font-title underline decoration-black underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;shop&#x2F;">SHOP</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;artiststatement&#x2F;">ARTIST STATEMENT</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;services&#x2F;">SERVICES</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;cart&#x2F;">CART</a>
+              
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="justify-self-end h-[80px]"> -->
+          
+          <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;b953e3f03fde189b00.png" alt="Logo for header" class="w-12 md:w-20" />
+        <!-- </div> -->
+
+        
+
+        <div x-cloak x-show="open" class="top-0 left-0 w-1/2 z-10  h-screen fixed drop-shadow-lg gap-y-2 bg-[#F0E0CB]">
+          <div class="flex flex-col items-start text-lg">
+            <hr>
+            <div @click="open = false" class="cursor-pointer bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink px-6 py-2 w-full font-title">X</div>
+            <hr>
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Home</a>
+            <hr>
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Shop</a>
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Artist Statement</a>
+
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/services/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Services</a>
+
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/cart/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Cart</a>
+          </div>
+        </div>
+    </div>    
+  </nav>
+</header>
+
+
+  
+
+  <section>
+    <div class="px-2">
+      
+   <div class="container mx-auto px-8 md:px-16" x-data="{
+    hide_first: false,
+    hide_second: false,
+    hide_third: false,
+   }">
+        <h1 class="text-2xl md:text-3xl lg:text-5xl font-thin font-title text-right">
+          <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/">SHOP THE COLLECTIONS</a>
+          </h1>
+          <div class="flex flex-row gap-x-4 text-base md:text-xl font-spectral py-11">
+            <div div class="flex flex-col w-1/3">
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"><div  @click="hide_first = false; hide_second = false; hide_third = false;">All</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"><div @click="hide_first = false; hide_second = true; hide_third = true;">First Collection</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"> <div @click="hide_second = false; hide_first = true;  hide_third = true;">Second Collection</div></a>
+              <a href="#" class="hover:underline hover:underline-offset-4 pb-2"> <div @click="hide_third = false; hide_second = true; hide_first = true;">Third Collection</div></a>
+              </div>
+              <div class="flex flex-col w-1/3" ></div>
+              <div class="w-1/3">
+                <div class="flex flex-row justify-end items-center gap-2">
+                  <a href="#"> <div>Filter</div></a>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                      </svg>
+                </div>
+                
+                </div>
+          </div>
+          <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-28 pb-36">
+
+            
+            <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/1pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;5ef7e2621a7a428500.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/2pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;2accf2ddf02144c000.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/3pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;1e57d2510ea72f6f00.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/4pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;470c1ac858d3a5a300.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/5pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;a0a54c10eae12b4e00.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/6pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;5e7f92fb2f320a6c00.jpg" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/7pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;f68ab3d33e0f55e300.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/8pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;d9d50d059094de7a00.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/9pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;e2ea3ca1f926c02b00.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/10pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;a2706e2639faba6300.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/11pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;307e779a4ba5c1b300.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/12pic.jpeg"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;a796e858e3c0aca900.jpg" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                    
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/13pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;f8ee6b83aa0cc99d00.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/14pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;b19b208c3f1366b700.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/15pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;7beb3870a6d78eb900.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/16pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;335f236003467e3400.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/17pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;c692dd2c98889eba00.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+                      <a href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/shop/18pic.jpeg" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
+                        
+                      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;1114d5d24fda84d900.jpg" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
+                      </a>
+
+
+
+          </div>
+          <div class="flex flex-row gap-x-4 text-2xl pb-11">
+            <div div class="flex flex-col w-1/3">
+              </div>
+              <div class="flex flex-col w-1/3" ></div>
+              <div class="flex flex-col font-spectral sm:text-left lg:text-right w-1/3">
+                1  2  3  4
+          </div>
+          </div>
+
+        </div>
+
+        
+    </div>
+  </section>
+    
+    
+
+<footer>
+  <div class="grid grid-cols-9 gap-x-4 justify-end bg-cutepink text-left pt-10 pb-20 full-width">
+    <div class="justify-self-center col-span-3 ">
+      
+      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;490fd1f3f433a71e00.png" alt="Logo for footer">
+    </div>
+    
+    <div class="text-xs md:text-base p-1 pr-4 md:pr-1 justify-self-end">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno">
+        <p class=" font-spectral hover:underline hover:underline-offset-4 ">Home</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno" class="hover:underline hover:underline-offset-4">Events</a></li>
+      </ul>
+    </div>
+  
+    <div class=" text-xs md:text-base p-1 justify-self-end">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Shop</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 1</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 2</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 3</a></li>
+      </ul>
+    </div>
+  
+    <div class="text-xs md:text-base p-1 col-span-2 justify-self-center">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Artist Statement</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/" class="hover:underline hover:underline-offset-4">Collection Inspiration</a></li>
+      </ul>
+    </div>
+  
+    <div class="text-xs md:text-base p-1 pr-4 md:pr-1">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/services/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Services</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/contact/" class="hover:underline hover:underline-offset-4">Request</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/contact/" class="hover:underline hover:underline-offset-4">Contact</a></li>
+      </ul>
+    </div>
+  
+    <div class="p-1 pl-4 md:pl-1">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/cart/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-4 md:w-6 h-4 md:h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+      </svg>
+      </a>
+      
+    </div>
+    
+  </div>
+</footer>
+
+
+
+    
+  
+
+  
+</body>
+
+</html>

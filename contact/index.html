@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Nat </title>
+  <link rel="stylesheet" href="https://springfieldcollege-mpcs.github.io/cisc288-final-website-natcastagno/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/images/favicon-16x16.png">
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="https://rawcdn.githack.com/nextapps-de/spotlight/0.7.8/dist/spotlight.bundle.js"> </script>
+
+  <script>
+    // https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQcMQo1H0V73lq3k173RXSntA8LIiI-0ACi04p7U6hIg2wzw/formResponse
+    const FORM_URL =
+    "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfQcMQo1H0V73lq3k173RXSntA8LIiI-0ACi04p7U6hIg2wzw/formResponse";
+    const FIRST_NAME = "entry.231463248";
+    const LAST_NAME = "entry.1563360268";
+    const EMAIL = "entry.1713856432";
+    const REQUEST = "entry.287155814";
+    const MESSAGE = "entry.2077739384";
+ 
+    function submitForm(formData) {
+      console.log(
+        `Received - firstname: ${formData.firstname}; lastname: ${formData.lastname}; email: ${formData.email}; request: ${formData.request}; message: ${formData.message}`
+      );
+      console.log("Preparing to submit data to the Google Form");
+
+      // collecting all data into an object
+      const formDetails = {};
+      formDetails[FIRST_NAME] = formData.firstname;
+      formDetails[LAST_NAME] = formData.lastname;
+      formDetails[EMAIL] = formData.email;
+      formDetails[REQUEST] = formData.request;
+      formDetails[MESSAGE] = formData.message;
+      // convert the javascript formDetails object to URL string for POST request
+      const formBodyString = new URLSearchParams(formDetails).toString();
+      // uncomment to see the url encoded string
+      console.log(formBodyString)
+
+      // posting data to our google form
+      fetch(FORM_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        mode: "no-cors",
+        body: formBodyString,
+      }).then(() => {
+        console.log("Success!");
+        // show message
+        formData.showMessage = true;
+        formData.firstname = '';
+        formData.lastname = '';
+        formData.email = '';
+        formData.request = '';
+        formData.message = '';
+          // remove message in 2 seconds
+        setTimeout(() => formData.showMessage = false, 2000);
+      });
+    }
+  </script>
+
+  
+
+</head>
+
+<body class="bg-[#F5F5F5]">
+
+  
+    
+<header class="" x-data="{
+  open: false
+}" >
+  <nav class="full-width">
+    <div class="full-width text-center py-2 font-spectral bg-[#F0E0CB] hover:underline hover:underline-offset-4">
+      <a href="#Events"><h1>CLICK HERE FOR NEWS AND UPCOMING EVENTS</h1></a>
+    </div>
+      
+      
+    <div class ="container md:mx-auto flex flex-row justify-between items-center py-4 md:py-8">
+
+        <div class="flex justify-left items-center bg-white-300  ">
+          <svg @click="open = !open; console.log(open)" xmlns="http://www.w3.org/2000/svg" class="visivle md:invisible cursor-pointer h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          
+          <ul class="hidden md:flex overflow-x-hidden mr-10 ">
+            <li>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno">HOME</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;shop&#x2F;">SHOP</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;artiststatement&#x2F;">ARTIST STATEMENT</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;services&#x2F;">SERVICES</a>
+              
+                
+                
+                
+                <a 
+                   class="text-black font-title hover:text-black hover:underline hover:underline-offset-4 mr-4 pr-4"
+                   href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;cart&#x2F;">CART</a>
+              
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="justify-self-end h-[80px]"> -->
+          
+          <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;b953e3f03fde189b00.png" alt="Logo for header" class="w-12 md:w-20" />
+        <!-- </div> -->
+
+        
+
+        <div x-cloak x-show="open" class="top-0 left-0 w-1/2 z-10  h-screen fixed drop-shadow-lg gap-y-2 bg-[#F0E0CB]">
+          <div class="flex flex-col items-start text-lg">
+            <hr>
+            <div @click="open = false" class="cursor-pointer bg-[#F0E0CB]   hover:bg-white  hover:text-cutepink px-6 py-2 w-full font-title">X</div>
+            <hr>
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Home</a>
+            <hr>
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Shop</a>
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Artist Statement</a>
+
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/services/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Services</a>
+
+            <hr>
+
+              <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/cart/" class="hover:bg-white  hover:text-cutepink-800 py-2 px-6 w-full font-title">Cart</a>
+          </div>
+        </div>
+    </div>    
+  </nav>
+</header>
+
+
+  
+
+  <section>
+    <div class="px-2">
+      
+<section x-data="{
+	firstname: '',
+	lastname: '',
+	email: '',
+	request: '',
+	message: '',
+	showMessage: false
+  }">
+	<div class=" pr-5 container mx-auto w-screen">
+		<h1 class="flex justify-end text-black text-2xl md:text-3xl lg:text-5xl font-thin pr-28 pb-20 font-title">
+			CONTACT</h1>
+
+		<div class="px-8 md:px-36 pb-8  md:pb-16">
+			<form class="grid grid-cols-2 gap-8 md:gap-16" @submit.prevent="submitForm($data)">
+
+				<label class=" block px-6 py-4 outline-cutepink border-cutepink ring-cutepink ">
+					<input type="text"
+						class="block form-input mt-1 h-12 w-full border-b-2 outline-cutepink border-cutepink ring-cutepink"
+						name="form-firstname" required x-model="firstname" placeholder="" />
+					<span class=" text-lg font-inria">First Name</span>
+				</label>
+
+				<label class=" block px-6 py-4  outline-cutepink border-cutepink ring-cutepink">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2 outline-cutepink border-cutepink ring-cutepink"
+						name="form-lastname" required x-model="lastname" placeholder="" />
+					<span class="text-lg font-inria">Last Name</span>
+				</label>
+
+
+				<label class="block col-span-2 px-6  outline-cutepink border-cutepink ring-cutepink ">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2  outline-cutepink border-cutepink ring-cutepink"
+						name="form-email" required x-model="email" placeholder="" />
+					<span class="text-lg font-inria">Email</span>
+				</label>
+
+				<label class="block col-span-2 px-6 tablet:px-56  outline-cutepink border-cutepink ring-cutepink">
+					<input type="text" class="block form-input mt-1 h-12 w-full border-b-2  outline-cutepink border-cutepink ring-cutepink"
+						name="form-request" required x-model="request" placeholder="" />
+					<p class="text-lg font-inria text-center">Request</p>
+				</label>
+
+				<label class="block col-span-2  outline-cutepink border-cutepink ring-cutepink px-6">
+					<p class="text-lg font-inria justify-self-center text-center">Message</p>
+					<textarea class=" block form-inria mt-1 w-full h-56  outline-cutepink border-cutepink ring-cutepink border-2 rounded-lg" rows="3"
+						name="form-message" required x-model="message" placeholder="Type Here.."></textarea>
+				</label>
+
+				<div class="pb-16 relative">
+					<button id="send_message_button"
+						class="absolute bottom-10 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border hover:border-2  bg-white align-bottom font-spectral z-10">Send
+						Message</button>
+					<div
+						class="absolute bottom-8 inset-x-1/2 w-36 md:w-64 h-8 md:h-12 left-[70px] tablet:left-[390px] border-black border  bg-[#E0C5C6] align-bottom font-spectral z-2 ml-1">
+						C</div>
+				</div>
+			</form>
+		</div>
+
+
+	</div>
+
+
+</section>
+
+
+    </div>
+  </section>
+    
+    
+
+<footer>
+  <div class="grid grid-cols-9 gap-x-4 justify-end bg-cutepink text-left pt-10 pb-20 full-width">
+    <div class="justify-self-center col-span-3 ">
+      
+      <img src="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno&#x2F;processed_images&#x2F;490fd1f3f433a71e00.png" alt="Logo for footer">
+    </div>
+    
+    <div class="text-xs md:text-base p-1 pr-4 md:pr-1 justify-self-end">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno">
+        <p class=" font-spectral hover:underline hover:underline-offset-4 ">Home</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno" class="hover:underline hover:underline-offset-4">Events</a></li>
+      </ul>
+    </div>
+  
+    <div class=" text-xs md:text-base p-1 justify-self-end">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Shop</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 1</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 2</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/shop/" class="hover:underline hover:underline-offset-4">Collection 3</a></li>
+      </ul>
+    </div>
+  
+    <div class="text-xs md:text-base p-1 col-span-2 justify-self-center">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Artist Statement</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/artiststatement/" class="hover:underline hover:underline-offset-4">Collection Inspiration</a></li>
+      </ul>
+    </div>
+  
+    <div class="text-xs md:text-base p-1 pr-4 md:pr-1">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/services/">
+        <p class="font-spectral hover:underline hover:underline-offset-4">Services</p>
+      </a>
+      <ul class="cursor-pointer font-title">
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/contact/" class="hover:underline hover:underline-offset-4">Request</a></li>
+        <li><a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/contact/" class="hover:underline hover:underline-offset-4">Contact</a></li>
+      </ul>
+    </div>
+  
+    <div class="p-1 pl-4 md:pl-1">
+      <a href="https:&#x2F;&#x2F;springfieldcollege-mpcs.github.io&#x2F;cisc288-final-website-natcastagno/cart/">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-4 md:w-6 h-4 md:h-6">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+      </svg>
+      </a>
+      
+    </div>
+    
+  </div>
+</footer>
+
+
+
+    
+  
+
+  
+</body>
+
+</html>
