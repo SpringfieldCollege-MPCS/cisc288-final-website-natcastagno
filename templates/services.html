@@ -44,9 +44,9 @@
     </div>
   </div>
 
-  <div class="relative full-width mt-12">
+  <div class="relative mt-12">
     {% set image = resize_image(path='/services/pic4.jpeg', width=2000, height=800, op="scale") %}
-          <img src="{{ image.url }}" alt="Painting stuffs" loading="lazy" />
+          <img class="full-width object-fill" src="{{ image.url }}" alt="Painting stuffs" loading="lazy" />
           <a href="{{config.base_url}}/contact/"><button id="contact_button" class="absolute -ml-20 bottom-10 inset-x-1/2 w-40 h-8 border  hover:border-black hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">COMISSION INQUIRY</button></a>
           <button id="contact_button"  class="absolute bottom-8 -ml-[76px] inset-x-1/2 w-40 h-8 border border-black   bg-[#E0C5C6] align-bottom font-spectral z-2 "></button>
   </div>
