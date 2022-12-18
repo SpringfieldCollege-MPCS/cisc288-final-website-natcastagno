@@ -36,17 +36,17 @@
                 {%- if asset.image_path is matching("[.](jpg|png|jpeg)$") -%}
                     {% set image = resize_image(path=asset.image_path, width=436, height=540, op="fill") %}
                     {%- if loop.index <= 6 -%}
-                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_first ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" x-transition x-show="!hide_first" ">
                         
                       <img src="{{ image.url }}" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 12 %}
-                      <a href="{{ get_url(path=asset.image_path) }}"  class="spotlight" data-download="true" :class="hide_second ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}"  class="spotlight" data-download="true" x-transition x-show="!hide_second"  ">
                         
                       <img src="{{ image.url }}" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 18 %}
-                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_third ? 'hidden': ''  ">
+                      <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" x-transition x-show="!hide_third"  ">
                         
                       <img src="{{ image.url }}" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
                       </a>
