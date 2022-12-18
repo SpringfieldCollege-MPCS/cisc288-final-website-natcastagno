@@ -16,45 +16,45 @@
         </section>
 
         <article class="pb-8 md:pb-32 ">
-            <div class=" relative grid grid-cols-4 grid-rows-2 items-center content-evenly sm:ml-4 md:ml-8 lg:ml-4">
-                <div>
+            <div class=" relative grid grid-cols-4 grid-rows-2 items-center grid-flow-dense max-w-[1200px] mx-auto space-y-0">
+                <!-- <div class=""> -->
                     {% set image = resize_image(path='/artiststatement/img1.jpg', width=300, height=300, op="fill") %}
                     <img src="{{ image.url }}" alt="Insipration Paper" loading="lazy"/>
-                </div>
+                <!-- </div> -->
 
-                <div>
+                <!-- <div> -->
                     {% set image = resize_image(path='/artiststatement/img2.jpg', width=300, height=300, op="fill") %}
                     <img src="{{ image.url }}" alt="Insipration Colors" loading="lazy"/>
-                </div>
+                <!-- </div> -->
 
-                <div>
+                <!-- <div> -->
                     {% set image = resize_image(path='/artiststatement/img4.jpg', width=300, height=300, op="fill") %}
                     <img src="{{ image.url }}" alt="Insipration Couple" loading="lazy"/>
-                </div>
+                <!-- </div> -->
 
-                <div>
+                <!-- <div> -->
                     {% set image = resize_image(path='/artiststatement/img3.jpg', width=300, height=300, op="fill") %}
                     <img src="{{ image.url }}" alt="Insipration Lady" loading="lazy"/>
-                </div>
+                <!-- </div> -->
 
             
                 <div class="col-span-2 content-start ">
-                    {% set image = resize_image(path='/artiststatement/img5.jpg', width=600, height=350, op="fill") %}
-                    <img src="{{ image.url }}" alt="Insipration5" loading="lazy" class="-mt-6"/>
+                    {% set image = resize_image(path='/artiststatement/img5.jpg', width=600, height=300, op="fill") %}
+                    <img src="{{ image.url }}" alt="Insipration5" loading="lazy" class=""/>
                 </div>
 
                 <div class="col-start-3">
-                    {% set image = resize_image(path='/artiststatement/img6.jpg', width=300, height=349, op="fill") %}
-                    <img src="{{ image.url }}" alt="Insipration sofa" loading="lazy" class="-mt-6 -ml-2"/>
+                    {% set image = resize_image(path='/artiststatement/img6.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" alt="Insipration sofa" loading="lazy" class=""/>
                 </div>
 
                 <div class="col-start-4">
-                    {% set image = resize_image(path='/artiststatement/img7.jpg', width=300, height=349, op="fill") %}
-                    <img src="{{ image.url }}" alt="Insipration Textured paper" loading="lazy" class="-mt-6 -ml-2"/>
+                    {% set image = resize_image(path='/artiststatement/img7.jpg', width=300, height=300, op="fill") %}
+                    <img src="{{ image.url }}" alt="Insipration Textured paper" loading="lazy" class=""/>
                 </div>  
 
-                <button id="inspire" class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] h-8 md:h-12 w-[200px] md:w-[300px] text-[12px] md:text-[16px] text-center justify-center font-spectral"
-                >WHAT INSPIRES MY ART</button>
+                <button id="inspire" class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] p-4"
+                > <span class="align-middle h-8 md:h-12 w-[250px] md:w-[300px] text-[16px] text-center font-spectral"> WHAT INSPIRES MY ART</span></button>
               </div>
 
         </article>
