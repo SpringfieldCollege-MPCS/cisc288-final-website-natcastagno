@@ -8,7 +8,7 @@
                 <div class="grid grid-cols-3 gap-4 md:gap-6 py-8 md:py-14 border-t-2 border-y-black">
                     <div class="pl-2 md:pl-10">
                         {% set image = resize_image(path='/shop/5pic.jpeg', width=297, height=192, op="scale") %}
-                        <img src="{{ image.url }}" />
+                        <img src="{{ image.url }}" alt="Picture 1" />
                     </div>
                     <div class="flex flex-col">
                         <p class="text-sm md:text-xl font-inria">Longmeadow vi</p>
@@ -20,7 +20,7 @@
                 <div class="grid grid-cols-3 gap-4 md:gap-6 pb-8 md:pb-14">
                     <div class="pl-2 md:pl-10">
                         {% set image = resize_image(path='/shop/2pic.jpeg', width=297, height=192, op="scale") %}
-                        <img src="{{ image.url }}" />
+                        <img src="{{ image.url }}" alt="Picture 1"/>
                     </div>
                     <div class="flex flex-col">
                         <p class="text-sm md:text-xl font-inria">York i</p>
@@ -38,8 +38,8 @@
         
         <article id="Submit button">
             <div class="pb-36 relative ">
-                <button class="absolute inset-x-1/2 -ml-20 w-40 h-8 md:h-12 border hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">SUBMIT</button>
-                <button class="absolute inset-x-1/2 -ml-[76px] w-40  h-8 md:h-12 border border-black bg-[#E0C5C6] align-bottom font-spectral mt-2"></button>
+                <button id="submit-button" class="absolute inset-x-1/2 -ml-20 w-40 h-8 md:h-12 border hover:border-2 border-black text-sm bg-white align-bottom font-spectral z-10">SUBMIT</button>
+                <button id="submit-button" class="absolute inset-x-1/2 -ml-[76px] w-40  h-8 md:h-12 border border-black bg-[#E0C5C6] align-bottom font-spectral mt-2"></button>
     </a>
             </div>
         </article>

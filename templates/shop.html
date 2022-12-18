@@ -38,17 +38,17 @@
                     {%- if loop.index <= 6 -%}
                       <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_first ? 'hidden': ''  ">
                         
-                      <img src="{{ image.url }}" loading="lazy" class="mt-0 mb-0" />
+                      <img src="{{ image.url }}" alt="Pics 1-6" loading="lazy" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 12 %}
                       <a href="{{ get_url(path=asset.image_path) }}"  class="spotlight" data-download="true" :class="hide_second ? 'hidden': ''  ">
                         
-                      <img src="{{ image.url }}" loading="lazy" class="mt-0 mb-0" />
+                      <img src="{{ image.url }}" alt="Pics 7-12"  loading="lazy" class="mt-0 mb-0" />
                       </a>
                     {% elif loop.index <= 18 %}
                       <a href="{{ get_url(path=asset.image_path) }}" class="spotlight" data-download="true" :class="hide_third ? 'hidden': ''  ">
                         
-                      <img src="{{ image.url }}" loading="lazy" class="mt-0 mb-0" />
+                      <img src="{{ image.url }}" alt="Pics 12-18" loading="lazy" class="mt-0 mb-0" />
                       </a>
                     {%- endif %} 
                 {%- endif %} 

@@ -7,7 +7,7 @@
         <section id="About" class="grid grid-cols-1 lg:grid-cols-2 grid-rows-1 gap-4 md:gap-16 items-center px-12 md:px-32 pb-12 md:pb-32">
             <div class="justify-items-start">
               {% set image = resize_image(path='/artiststatement/about.jpg', width=479, height=584, op="scale") %}
-              <img src="{{ image.url }}" loading="lazy" class="h-96 w-80 rounded-full"/>
+              <img src="{{ image.url }}" alt="Nat Castagno Pic" loading="lazy" class="h-96 w-80 rounded-full"/>
             </div>
       
             <div class="flex flex-col">
@@ -20,43 +20,41 @@
             <div class=" relative grid grid-cols-4 grid-rows-2 items-center content-evenly sm:ml-4 md:ml-8 lg:ml-4">
                 <div>
                     {% set image = resize_image(path='/artiststatement/img1.jpg', width=300, height=300, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy"/>
+                    <img src="{{ image.url }}" alt="Insipration Paper" loading="lazy"/>
                 </div>
 
                 <div>
                     {% set image = resize_image(path='/artiststatement/img2.jpg', width=300, height=300, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy"/>
+                    <img src="{{ image.url }}" alt="Insipration Colors" loading="lazy"/>
                 </div>
 
                 <div>
                     {% set image = resize_image(path='/artiststatement/img4.jpg', width=300, height=300, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy"/>
+                    <img src="{{ image.url }}" alt="Insipration Couple" loading="lazy"/>
                 </div>
 
                 <div>
                     {% set image = resize_image(path='/artiststatement/img3.jpg', width=300, height=300, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy"/>
+                    <img src="{{ image.url }}" alt="Insipration Lady" loading="lazy"/>
                 </div>
 
             
                 <div class="col-span-2 content-start ">
                     {% set image = resize_image(path='/artiststatement/img5.jpg', width=600, height=350, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy" class="-mt-6"/>
+                    <img src="{{ image.url }}" alt="Insipration5" loading="lazy" class="-mt-6"/>
                 </div>
 
                 <div class="col-start-3">
                     {% set image = resize_image(path='/artiststatement/img6.jpg', width=300, height=349, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy" class="-mt-6 -ml-2"/>
+                    <img src="{{ image.url }}" alt="Insipration sofa" loading="lazy" class="-mt-6 -ml-2"/>
                 </div>
 
                 <div class="col-start-4">
                     {% set image = resize_image(path='/artiststatement/img7.jpg', width=300, height=349, op="fill") %}
-                    <img src="{{ image.url }}" loading="lazy" class="-mt-6 -ml-2"/>
-                </div>
+                    <img src="{{ image.url }}" alt="Insipration Textured paper" loading="lazy" class="-mt-6 -ml-2"/>
+                </div>  
 
-                
-
-                <button class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] h-8 md:h-12 w-[200px] md:w-[300px] text-[12px] md:text-[16px] text-center justify-center font-spectral"
+                <button id="inspire" class="absolute mx-auto inset-x-0 bottom-24 bg-[#F0E0CB] h-8 md:h-12 w-[200px] md:w-[300px] text-[12px] md:text-[16px] text-center justify-center font-spectral"
                 >WHAT INSPIRES MY ART</button>
               </div>
 
@@ -72,7 +70,7 @@
                 <div class="flex flex-col">
                     <a href="/shop/">
                     {% set image = resize_image(path='/artiststatement/c1.jpg', width=787, height=475, op="scale") %}
-                    <img src="{{ image.url }}" loading="lazy"/></a>
+                    <img src="{{ image.url }}" alt="Collection1" loading="lazy"/></a>
                     <div class="text-right"><a href="/shop/" class="hover:underline hover:underline-offset-4">Shop The Collection -> </a></div>
                 </div>
 
@@ -87,7 +85,7 @@
                 <div class="flex flex-col">
                     <a href="/shop/">
                     {% set image = resize_image(path='/artiststatement/c2.jpg', width=787, height=475, op="scale") %}
-                    <img src="{{ image.url }}" loading="lazy"/></a>
+                    <img src="{{ image.url }}" alt="Collection2"  loading="lazy"/></a>
                     <div class="text-right"><a href="/shop/" class="hover:underline hover:underline-offset-4">Shop The Collection -> </a></div>
                 </div>
 
@@ -102,7 +100,7 @@
                 <div class="flex flex-col">
                     <a href="/shop/">
                     {% set image = resize_image(path='/artiststatement/c3.jpg', width=787, height=475, op="scale") %}
-                    <img src="{{ image.url }}" loading="lazy"/></a>
+                    <img src="{{ image.url }}" alt="Collection3"  loading="lazy"/></a>
                     <div class="text-right"><a href="/shop/" class="hover:underline hover:underline-offset-4">Shop The Collection -> </a></div>
                 </div>
 
